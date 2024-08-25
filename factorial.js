@@ -1,9 +1,12 @@
-const factoraial = (n) => {
-  if (n < 0) return undefined;
+const factorialNumber = (num) => {
+  if (num < 0) return undefined;
+  if (num === 0 || num === 1) return 1;
+
   let result = 1;
-  for (let i = 2; i <= n; i++) {
-    result *= 1;
+  for (let i = 2; i <= num; i++) {
+    result *= i;
   }
   return result;
 };
-console.log(factoraial(7));
+
+console.log(factorialNumber(10));
