@@ -1,25 +1,26 @@
-const gcdTwoNumbers = (x, y) => {
+const gcdTwoNumber = (x, y) => {
   x = Math.abs(x);
   y = Math.abs(y);
 
   while (y !== 0) {
     const remainder = x % y;
+
     x = y;
     y = remainder;
   }
   return x;
 };
-
-const gcdThreeNumbers = (a, b, c) => {
-  // Find GCD of first two numbers
-  const gcdAB = gcdTwoNumbers(a, b);
-
-  // Find GCD of result with the third number
-  return gcdTwoNumbers(gcdAB, c);
+const gcdThreeNumber = (a, b, c) => {
+  const gcdAB = gcdTwoNumber(a, b);
+  return gcdTwoNumber(gcdAB, c);
 };
 
-const n1 = 45;
-const n2 = 56;
-const n3 = 90;
+const num1 = 60;
 
-console.log(`GCD of ${n1}, ${n2}, and ${n3} is ${gcdThreeNumbers(n1, n2, n3)}`);
+const num2 = 90;
+
+const num3 = 120;
+
+console.log(
+  ` GCD of ${num1} , ${num2} and ${num3} of ${gcdThreeNumber(num1, num2, num3)}`
+);
